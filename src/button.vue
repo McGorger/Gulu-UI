@@ -1,5 +1,5 @@
 <template>
-  <button class="g-button">按钮</button>
+  <button class="g-button">我是按钮</button>
 </template>
 
 <script>
