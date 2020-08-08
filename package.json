@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/McGorger/Gulu-UI/issues"
   },
-  "homepage": "https://github.com/McGorger/Gulu-UI#readme"
+  "homepage": "https://github.com/McGorger/Gulu-UI#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
