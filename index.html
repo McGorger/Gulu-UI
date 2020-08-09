@@ -1,35 +1,57 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{margin: 0;padding: 0;box-sizing: border-box;}
-        :root{
-            --button-height:32px;
-            --font-size:14px;
-            --button-bg:white;
-            --button-active-bg:#eee;
-            --button-radius:4px;
-            --color:#999;
-            --border-color:#999;
-            --border-color-hover:#666;
-     }
-     #app{
-         margin: 20px;
-     }
-     body{
-         font-size: var(--font-size);
-     }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --button-height: 32px;
+            --font-size: 14px;
+            --button-bg: white;
+            --button-active-bg: #eee;
+            --button-radius: 4px;
+            --color: #999;
+            --border-color: #999;
+            --border-color-hover: #666;
+        }
+
+        #app {
+            margin: 20px;
+        }
+
+        body {
+            font-size: var(--font-size);
+        }
     </style>
-  
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+        }
+    </style>
 </head>
+
 <body>
     <div id="app">
-        <g-button></g-button>
+        <g-button icon='setting' >
+            按钮</g-button>
+        <g-button :loading="loading1" @click="loading1=!loading1" >
+            按钮</g-button>
+        <g-button  icon='setting' :loading="loading2"
+        @click="loading2=!loading2"
+        icon-position="right">
+            按钮</g-button>
+    
     </div>
     <script src="./node_modules/vue/dist/vue.min.js"></script>
-    <script  src="./src/app.js"></script>
+    <script src="./src/app.js"></script>
+    <script src="//at.alicdn.com/t/font_1994811_zo3a8k8alu.js"></script>
 </body>
-</html>
