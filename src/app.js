@@ -13,3 +13,66 @@ new Vue({
         loading3:true
     },
 })
+import chai from 'chai'
+const expect  = chai.expect;
+// 单元测试
+{
+    const Constructor =Vue.extend(Button);
+    const button = new Constructor({
+        propsData:{
+           icon:'setting'
+        }
+    });
+    button.$mount();
+    let useElement  =  button.$el.querySelector('use');
+    expect(useElement.getAttribute('xlink:href')).to.eq('#i-setting');
+    button.$el.remove();
+    button.$destroy();
+}
+{
+    const Constructor =Vue.extend(Button);
+    const vm = new Constructor({
+        propsData:{
+           icon:'setting',
+           loading:true
+        }
+    });
+    vm.$mount();
+    let useElement  =  vm.$el.querySelector('use');
+    expect(useElement.getAttribute('xlink:href')).to.eq('#i-loading');
+    vm.$el.remove();
+    vm.$destroy();
+}
+{
+    const Constructor =Vue.extend(Button);
+    const vm = new Constructor({
+        propsData:{
+           icon:'setting',
+           loading:true
+        }
+    });
+    vm.$mount('#test');
+    let svg  =  vm.$el.querySelector('svg');
+  let {order}= window.getComputedStyle(svg);
+    expect(order).to.eq('1');
+    vm.$el.remove();
+    vm.$destroy();
+}
+{
+    const Constructor =Vue.extend(Button);
+    const vm = new Constructor({
+        propsData:{
+           icon:'setting',
+  
+        }
+    });
+    vm.$mount();  
+    let  button  =  vm.$el;
+    vm.$on('click',function(){
+       expect(1).to.eq(1);
+    })
+  
+    button.click();
+    // expect(order).to.eq('1');
+  
+}
