@@ -14,6 +14,11 @@ new Vue({
         loading2:false,
         loading3:true
     },
+    methods:{
+        inputChange(e){
+            console.log(e.target.value);
+        }
+    }
 })
 import chai from 'chai'
 import spies from 'chai-spies'
