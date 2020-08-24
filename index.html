@@ -38,7 +38,7 @@
         }
     </style>
     <style>
-        .box{
+        .box {
             margin: 20px;
 
         }
@@ -47,15 +47,10 @@
 
 <body>
     <div id="app">
-  <div class="box">
-    <g-input value="张三" disabled ></g-input>
-    <g-input value="张三" @change="inputChange"></g-input>
-    <g-input value="王五" readonly></g-input>
-  </div>
         <div class="box">
-           <g-input value="张三" error="姓名不能少于两个字" ></g-input> 
+            <g-input value="张三" v-model="message"></g-input>
+            <p>{{ message }}</p>
         </div>
-        
         <div class="box">
             <g-button icon='setting'>
                 按钮</g-button>
