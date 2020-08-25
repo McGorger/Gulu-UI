@@ -37,16 +37,16 @@
             height: 1em;
         }
     </style>
-    <style>
-        .box {
-            margin: 20px;
-
-        }
-    </style>
 </head>
 
 <body>
     <div id="app">
+
+      <g-row>
+          <g-col span='12'>1</g-col>
+          <g-col span='12'>2</g-col>
+      </g-row>
+        <hr>
         <div class="box">
             <g-input value="张三" v-model="message"></g-input>
             <p>{{ message }}</p>
