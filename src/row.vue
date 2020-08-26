@@ -42,14 +42,14 @@ export default {
 <style scoped lang='scss'>
 .row {
   display: flex;
-  margin: 0 -10px;
-  &-left{
+  flex-wrap: wrap;
+  &.align-left{
       justify-content: start;
   }
-  &-right{
+  &.align-right{
       justify-content: right;
   }
-  &-center{
+  &.align-center{
       justify-content: center;
   }
 }
