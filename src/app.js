@@ -5,12 +5,22 @@ import Input from './input.vue';
 import Icon from './icon.vue';
 import Row from './row.vue';
 import Col from './col.vue';
+import Layout from './layout.vue';
+import Footer from './footer.vue';
+import Sider from './Sider.vue';
+import Content from './content.vue';
+import Header from './Header.vue';
 Vue.component('g-button',Button)
 Vue.component('g-button-group',ButtonGroup)
 Vue.component('g-icon',Icon)
 Vue.component('g-input',Input)
 Vue.component('g-row',Row);
 Vue.component('g-col',Col);
+Vue.component('g-layout',Layout);
+Vue.component('g-header',Header);
+Vue.component('g-footer',Footer);
+Vue.component('g-sider',Sider);
+Vue.component('g-content',Content);
 new Vue({
     el:'#app',
     data:{
@@ -26,65 +36,4 @@ new Vue({
         }
     }
 })
-import chai from 'chai'
-import spies from 'chai-spies'
-chai.use(spies);
-const expect  = chai.expect;
-// 单元测试
-// {
-//     const Constructor =Vue.extend(Button);
-//     const button = new Constructor({
-//         propsData:{
-//            icon:'setting'
-//         }
-//     });
-//     button.$mount();
-//     let useElement  =  button.$el.querySelector('use');
-//     expect(useElement.getAttribute('xlink:href')).to.eq('#i-setting');
-//     button.$el.remove();
-//     button.$destroy();
-// }
-// {
-//     const Constructor =Vue.extend(Button);
-//     const vm = new Constructor({
-//         propsData:{
-//            icon:'setting',
-//            loading:true
-//         }
-//     });
-//     vm.$mount();
-//     let useElement  =  vm.$el.querySelector('use');
-//     expect(useElement.getAttribute('xlink:href')).to.eq('#i-loading');
-//     vm.$el.remove();
-//     vm.$destroy();
-// }
-// {
-//     const Constructor =Vue.extend(Button);
-//     const vm = new Constructor({
-//         propsData:{
-//            icon:'setting',
-//            loading:true
-//         }
-//     });
-//     vm.$mount('#test');
-//     let svg  =  vm.$el.querySelector('svg');
-//   let {order}= window.getComputedStyle(svg);
-//     expect(order).to.eq('1');
-//     vm.$el.remove();
-//     vm.$destroy();
-// }
-// {
-//     const Constructor =Vue.extend(Button);
-//     const vm = new Constructor({
-//         propsData:{
-//            icon:'setting',
-  
-//         }
-//     });
-//     vm.$mount();  
-//     let spy = chai.spy(function(){})
-//     vm.$on('click',spy)
-//     let  button  =  vm.$el;
-//     button.click();
-//     expect(spy).to.have.been.called();
-// }
+

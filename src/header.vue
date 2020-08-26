@@ -1,15 +1,15 @@
 <template>
- <div class="sider">
+ <div class="header">
 <slot></slot>
  </div>
 </template>
 <script>
 export default {
-    name:'GuluSider'
+    name:"GuluHeader"
 }
 </script>
 <style scoped lang='scss'>
-.sider{
+.header{
 
 }
  
