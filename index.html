@@ -40,19 +40,44 @@
 </head>
 
 <body>
+    <style>
+        .demo{
+            background: grey;
+            border: 1px solid #666;
+            height: 100px;
+        }
+    </style>
     <div id="app">
-        <g-row gutter='20'>
-            <g-col span='2' :pc="{span:2}" :narrow-pc="{span:10}" :ipad="{span:8}">1</g-col>
-            <g-col span='22' :pc="{span:22}" :narrow-pc="{span:14}" :ipad="{span:16}">2</g-col>
-        </g-row>
-        <g-row gutter='20'>
-            <g-col span='12'>1</g-col>
-            <g-col span='10' offset='2'>2</g-col>
-        </g-row>
-        <g-row gutter='20'>
-            <g-col span='4'>1</g-col>
-            <g-col span='8' offset='2'>11</g-col>
-            <g-col span='8' offset='2'>11</g-col>
+        <g-row >
+          <g-col :span="24"  :narrow-pc="{span:8}">
+              <div class="demo"></div>
+          </g-col>
+          <g-col :span="24"  :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </g-col>
+        <g-col :span="24" :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </g-col>
+        <g-col :span="24"  :narrow-pc="{span:8}">
+            <div class="demo"></div>
+        </g-col>
+        <g-col :span="24"  :narrow-pc="{span:8}">
+          <div class="demo"></div>
+      </g-col>
+      <g-col :span="24"  :narrow-pc="{span:8}">
+          <div class="demo"></div>
+      </g-col>
+      <g-col :span="24"   :narrow-pc="{span:8}">
+        <div class="demo"></div>
+    </g-col>
+    <g-col :span="24"   :narrow-pc="{span:8}">
+      <div class="demo"></div>
+  </g-col>
+  <g-col :span="24"  :narrow-pc="{span:8}">
+      <div class="demo"></div>
+  </g-col>
+        
+       
         </g-row>
         <hr>
         <div class="box">
