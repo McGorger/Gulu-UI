@@ -12,34 +12,36 @@ import Content from './content.vue';
 import Header from './header.vue';
 import Toast from './toast.vue';
 import plugin from './plugin';
-Vue.component('g-button',Button)
-Vue.component('g-button-group',ButtonGroup)
-Vue.component('g-icon',Icon)
-Vue.component('g-input',Input)
-Vue.component('g-row',Row);
-Vue.component('g-col',Col);
-Vue.component('g-layout',Layout);
-Vue.component('g-header',Header);
-Vue.component('g-footer',Footer);
-Vue.component('g-sider',Sider);
-Vue.component('g-content',Content);
-Vue.component('g-toast',Toast);
+Vue.component('g-button', Button)
+Vue.component('g-button-group', ButtonGroup)
+Vue.component('g-icon', Icon)
+Vue.component('g-input', Input)
+Vue.component('g-row', Row);
+Vue.component('g-col', Col);
+Vue.component('g-layout', Layout);
+Vue.component('g-header', Header);
+Vue.component('g-footer', Footer);
+Vue.component('g-sider', Sider);
+Vue.component('g-content', Content);
+Vue.component('g-toast', Toast);
 Vue.use(plugin);
 new Vue({
-    el:'#app',
-    data:{
-        loading1:false,
-        loading2:false,
-        loading3:true,
-        message:"hi"
+    el: '#app',
+    data: {
+        loading1: false,
+        loading2: false,
+        loading3: true,
+        message: "hi"
     },
-    created(){
-        
+    created() {
+        this.$toast('<strong>hi<strong>', {
+            enableHtml:true
+        });
     },
-    methods:{
+    methods: {
 
-        showToast(){
-            this.$toast('我是message');
+        showToast() {
+
         }
     }
 })
