@@ -1,11 +1,11 @@
 <template>
-  <div class="toast" ref="wrapper">
-   <div class="message">
-     <slot v-if="!enableHtml"></slot>
-    <div v-else v-html="$slots.default[0]"></div>
-   </div>
+  <div class="toast" ref="wrapper" :class="toastClasses">
+    <div class="message">
+      <slot v-if="!enableHtml"></slot>
+      <div v-else v-html="$slots.default[0]"></div>
+    </div>
     <div class="line" ref="line"></div>
-    <span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.test}}</span>
+    <span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
   </div>
 </template>
 
@@ -34,11 +34,25 @@ export default {
       type: Boolean,
       default: false,
     },
+    position: {
+      type: String,
+      default: "top",
+      validator(value) {
+        console.log(value)
+        return ["top","bottom", "middle"].indexOf(value) >= 0;
+      },
+    },
   },
 
   mounted() {
+    console.log(this.closeButton);
     this.execAutoClose();
     this.updataStyle();
+  },
+  computed: {
+    toastClasses() {
+      return { [`position-${this.position}`]: true };
+    },
   },
   methods: {
     updataStyle() {
@@ -75,9 +89,7 @@ $toast-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.75);
 .toast {
   position: fixed;
-  top: 0;
   left: 50%;
-  transform: translateX(-50%);
   font-size: $font-size;
   line-height: 1.8;
   min-height: $toast-height;
@@ -88,8 +100,8 @@ $toast-bg: rgba(0, 0, 0, 0.75);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   padding: 0 16px;
   color: white;
-  >.message{
-    padding: 8px 0 ;
+  > .message {
+    padding: 8px 0;
   }
   > .close {
     padding-left: 16px;
@@ -98,6 +110,18 @@ $toast-bg: rgba(0, 0, 0, 0.75);
   > .line {
     border: 1px solid #666;
     margin-left: 16px;
+  }
+  &.position-top{
+     transform: translateX(-50%);
+   top:0
+  }
+   &.position-bottom{
+      transform: translateX(-50%);
+   bottom:0
+  }
+  &.position-middle{
+   top: 50%;
+   transform: translate(-50%,-50%);
   }
 }
 </style>
