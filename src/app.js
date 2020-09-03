@@ -40,7 +40,7 @@ new Vue({
 
         showToast() {
             this.$toast('你的智商要充值', {
-                position: 'middle',
+                position: 'bottom',
                 enableHtml: true,
                 closeButton: {
                     text: "已充值",
