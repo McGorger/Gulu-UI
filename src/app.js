@@ -34,24 +34,24 @@ new Vue({
         message: "hi"
     },
     created() {
-        this.$toast('你的智商要充值', {
-            position:'middle',
-            enableHtml:true,
-            closeButton:{
-                text:"已充值",
-                callback(){
-                    console.log('dada');
-                }
-            },
-            autoClose:true,
-            autoCloseDelay:100
 
-        });
     },
     methods: {
 
         showToast() {
+            this.$toast('你的智商要充值', {
+                position: 'middle',
+                enableHtml: true,
+                closeButton: {
+                    text: "已充值",
+                    callback() {
+                        console.log('dada');
+                    }
+                },
+                autoClose: true,
+                autoCloseDelay: 100
 
+            });
         }
     }
 })
